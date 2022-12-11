@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-/* C Program that prints the size of various data types according to the computer it runs on */
-int main(void)
+int main(void) /* C Program that prints the size of various data types according to the computer it runs on */
 {
 	printf("Size of a char: %d byte(s)",sizeof(char));
 	printf("Size of a int: %d byte(s)",sizeof(int));
