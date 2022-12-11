@@ -1,6 +1,10 @@
 #include <stdio.h>
 
-int main(void) /* C Program that prints a certain text using the printf function */
+/** 
+ * main - C Program that prints a certain text using the printf function 
+ */
+
+int main(void) 
 {
 	printf("with proper grammar, but the outcome is a piece of art,\n");
 
