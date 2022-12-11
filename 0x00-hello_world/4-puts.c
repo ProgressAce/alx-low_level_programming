@@ -1,9 +1,8 @@
 #include <stdio.h>
-
 /**
  * main - entry point
  *
- * Description: C Program that prints a certain text using the puts function 
+ * Description: C Program that prints a certain text using the puts function
  *
  * Return: Always 0 (Success)
  */
