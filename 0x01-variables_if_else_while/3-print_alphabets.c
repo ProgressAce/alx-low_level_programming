@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
- * main - C Prints the alphabet in lowercase, and then in uppercase, followed by a new line. Using only the putchar function
+ * main - C Prints the alphabet in lowercase, and then in uppercase,
+ * followed by a new line. Using only the putchar function
  *
  * Return: 0 (Success)
  */

@@ -3,7 +3,8 @@
 /**
  * main - entry point
  *
- * Description: prints the lowercase alphabet in reverse, followed by a new line.
+ * Description: prints the lowercase alphabet in reverse,
+ * followed by a new line.
  *
  * Return: Always 0
  */

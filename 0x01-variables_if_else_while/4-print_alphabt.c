@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
- * main - Prints the alphabet in lowercase, except and e, followed by a new line. Using putchar function
+ * main - Prints the alphabet in lowercase, except q and e,
+ * followed by a new line. Using putchar function
  *
  * Return: 0 (Success)
  */
