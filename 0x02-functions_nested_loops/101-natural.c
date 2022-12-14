@@ -1,14 +1,14 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
- * sum_of_multiples_3_5 - prints the sum of all the multiples of 3 or 5 below
- * 1024 (excluded), followed by a new line.
+ * main - entry point
  *
- * Returns: nothing
+ * Description - 1024 (excluded), followed by a new line.
+ *
+ * Returns: always 0
  */
 
-void sum_of_multiples_3_5(void)
+int main(void)
 {
 	int num;
 	int sum = 0;
@@ -20,4 +20,6 @@ void sum_of_multiples_3_5(void)
 	}
 
 	printf("%d\n", sum);
+
+	return (0);
 }

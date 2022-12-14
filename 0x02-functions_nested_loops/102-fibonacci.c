@@ -1,15 +1,15 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
- * print_fibonacci_50 - prints the first 50 Fibonacci numbers,
- * starting with 1 and 2, followed by a new line.
- * @void
+ * main - entry point
  *
- * Return: nothing
+ * Description - prints the first 50 Fibonacci numbers,
+ * starting with 1 and 2, followed by a new line.
+ *
+ * Return: always 0
  */
 
-void print_fibonacci_50(void)
+int main(void)
 {
 	int num1 = 1;
 	int num2 = 2;
@@ -33,4 +33,6 @@ void print_fibonacci_50(void)
 	}
 
 	putchar('\n');
+
+	return (0);
 }
