@@ -1,8 +1,5 @@
-#include <stdlib.h>
+#include <ctype.h>
 #include "main.h"
-
-/* function prototype for isalpha */
-int isalpha(int c);
 
 /**
  * _isalpha - checks for alphabetic character.
