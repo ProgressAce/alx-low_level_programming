@@ -5,7 +5,7 @@
  *
  * Description - 1024 (excluded), followed by a new line.
  *
- * Returns: always 0
+ * Return: always 0
  */
 
 int main(void)
