@@ -1,4 +1,8 @@
 #include <stdlib.h>
+#include "main.h"
+
+/* function prototype for islower */
+int islower(int c);
 
 /**
  * _islower -  Checks for lowercase character.
@@ -9,7 +13,7 @@
 
 int _islower(int c)
 {
-	if (_islower(c))
+	if (islower(c))
 		return (1);
 	else
 		return (0);
