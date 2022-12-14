@@ -1,10 +1,7 @@
-#include "_putchar.c"
-
-/* Prototype declaration for _putchar */
-/*int _putchar(char c);*/
+#include "main.h"
 
 /**
- * main - entry point
+ * main - prints "_putchar", followed by a new line
  *
  * Return: 0 (Success)
  */
