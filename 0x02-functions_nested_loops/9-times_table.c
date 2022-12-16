@@ -18,10 +18,25 @@ void times_table(void)
 		{
 			result = row * col;
 
-			_putchar(result);
-			_putchar(',');
-			_putchar(' ');
-			_putchar(' ');
+			/**
+			 * if result is a two digit number then print its first digit first,
+			 * followed by its second digit
+			 */
+			if (result > 9)
+				_putchar((result / 10) + '0');
+
+			_putchar((result % 10) + '0');
+
+			/* Only put seperators when "col" == 9 */
+			if (col != 9)
+			{
+				_putchar(',');
+				_putchar(' ');
+
+				/* put extra seperator if result > 9 */
+				if (result <= 9)
+					_putchar(' ');
+			}
 		}
 
 		_putchar('\n');
