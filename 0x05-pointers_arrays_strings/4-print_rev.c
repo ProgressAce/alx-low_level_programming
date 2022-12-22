@@ -16,12 +16,15 @@ void print_rev(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 		length++;
 
+	/* size length so that it can act as array index starting from 0 and not 1 */
+	length--;
+
 	/* reverse the string starting at the end */
 	while (length >= 0)
 	{
-		length--;
-
 		_putchar(s[length]);
+
+		length--;
 	}
 	_putchar('\n');
 }
