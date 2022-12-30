@@ -14,6 +14,10 @@ void print_array(int *a, int n)
 {
 	int i;
 
+	/* check if number of elements(n) is incorrect */
+	if (n <= 0)
+		printf("\n");
+
 	/* loop through array starting from 0 to n */
 	for (i = 0; i < n; i++)
 	{
