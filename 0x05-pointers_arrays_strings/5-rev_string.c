@@ -11,13 +11,13 @@ void rev_string(char *s)
 {
 	int i;
 	int length = 0;
-	int temp;	
+	int temp;
 
 	/* get length of string */
 	for (i = 0; s[i] != '\0'; i++)
 		length++;
 
-	/* 
+	/*
 	 * swap the first and last element pairs after each other
 	 * until the loop reaches the centre
 	 */
