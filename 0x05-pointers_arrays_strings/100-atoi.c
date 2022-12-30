@@ -17,13 +17,13 @@ int _atoi(char *s)
 	/* loop through s */
 	for (i = 0; s[i] != '\0'; i++)
 	{
+		/* check if number is negative */
+		if (s[i - 1] == '-')
+			sign *= -1;
+
 		/* if element is a digit, then loop */
 		while ((s[i] >= '0') && (s[i] <= '9'))
 		{
-			/* check if number is negative */
-			if (s[i - 1] == '-')
-				sign *= -1;
-
 			/* place next digit and convert it to an integer */
 			total = (total * 10) + (s[i] - '0');
 
