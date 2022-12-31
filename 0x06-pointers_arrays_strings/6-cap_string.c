@@ -21,7 +21,7 @@ char *cap_string(char *s)
 
 	/* check for, if length <= 0 */
 	if (length <= 0)
-		return ("");
+		return ('\0');
 
 	/* loop through s */
 	for (i = 0; s[i] != '\0'; i++)
