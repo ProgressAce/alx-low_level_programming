@@ -21,13 +21,15 @@ char *cap_string(char *s)
 
 	/* check for, if length <= 0 */
 	if (length <= 0)
-		return ('\0');
+		return ("\n");
 
 	/* loop through s */
 	for (i = 0; s[i] != '\0'; i++)
 	{
+		/* loop through leet characters */
 		for (j = 0; j < 13; j++)
 		{
+			/* check if s char == separators char */
 			if (s[i] == separators[j])
 			{
 				if ((s[i + 1] >= 97) && (s[i + 1] <= 122))
