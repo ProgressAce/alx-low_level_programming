@@ -17,7 +17,7 @@ int print_last_digit(int n)
 	 * more than the INT_MAX value
 	 */
 	if (rem < 0)
-		rem *= -1;
+		rem = -rem;
 
 	/* print the last digit of n */
 	_putchar(rem);
