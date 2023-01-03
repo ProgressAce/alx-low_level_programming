@@ -27,7 +27,7 @@ void times_table(void)
 
 			_putchar((result % 10) + '0');
 
-i			/* Only put seperators when "col" is less than 9 */
+			/* Only put seperators when "col" is less than 9 */
 			if (col != 9)
 			{
 				_putchar(',');
