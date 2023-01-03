@@ -34,7 +34,7 @@ void times_table(void)
 				_putchar(' ');
 
 				/* put extra seperator if result < 10 */
-				if (!(result > 9))
+				if (result < 10)
 					_putchar(' ');
 			}
 		}
