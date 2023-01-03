@@ -35,10 +35,9 @@ char *_strncpy(char *dest, char *src, int n)
 				dest[i] = src[i];
 		}
 
-		/* append null character only if len_src(source string) <= n */
-		if (n > len_src)
-	      		dest[len_src] = '\0';
-	}
+	/* append null character only if len_src(source string) <= n */
+	if (n > len_src)
+		dest[len_src] = '\0';
 	else
 		dest[0] = '\0';
 
