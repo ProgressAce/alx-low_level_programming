@@ -10,11 +10,17 @@
 
 int print_last_digit(int n)
 {
-	if (n < 0)
-		n = -n;
+	int rem = n % 10;
+
+	/**
+	 * if INT_MIN value is changed to positive it will be one
+	 * more than the INT_MAX value
+	 */
+	if (rem < 0)
+		rem *= -1;
 
 	/* print the last digit of n */
-	_putchar((n % 10) + '0');
+	_putchar(rem);
 
-	return (n % 10);
+	return (rem);
 }
