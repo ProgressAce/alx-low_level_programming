@@ -18,7 +18,7 @@ char *leet(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		/* loop through leet */
-		for (j = 0; leet[j] != '\0'; j++)
+		for (j = 0; leet_alpha[j] != '\0'; j++)
 		{
 			/* check that s element equals leet element */
 			if (s[i] == leet_alpha[j])
