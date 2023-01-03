@@ -27,14 +27,14 @@ void times_table(void)
 
 			_putchar((result % 10) + '0');
 
-			/* Only put seperators when "col" == 9 */
+i			/* Only put seperators when "col" is less than 9 */
 			if (col != 9)
 			{
 				_putchar(',');
 				_putchar(' ');
 
-				/* put extra seperator if result > 9 */
-				if (result <= 9)
+				/* put extra seperator if result < 10 */
+				if (!(result > 9))
 					_putchar(' ');
 			}
 		}
