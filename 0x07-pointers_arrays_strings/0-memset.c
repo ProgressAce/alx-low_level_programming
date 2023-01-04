@@ -20,8 +20,8 @@ char *_memset(char *s, char b, unsigned int n)
 	for (i = 0; i < n; i++)
 	{
 		/* break if n > length of s */
-		if (s[i] == '\0')
-			break;
+		/* if (s[i] == '\0') */
+		/*	break; */
 
 		/* fill s with char b */
 		s[i] = b;
