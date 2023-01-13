@@ -17,6 +17,7 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *a;
+	int i;
 
 	/* check for arguments with value of 0 */
 	if ((nmemb == 0) || (size == 0))
@@ -27,6 +28,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (a == NULL)
 		return (NULL);
 
-	*a = 0;
+	for (i = 0; i < (nmemb * size); i++)
+		a[i] = 0;
+
 	return (a);
 }
