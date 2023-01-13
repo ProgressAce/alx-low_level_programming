@@ -6,7 +6,7 @@
  * of 'size' bytes each, using malloc.
  * @nmemb: the number of elements of array
  * @size: the amount of bytes for each element
- * 
+ *
  * Extra info: the memory is set to zero.
  * if nmemb or size equals to zero, then the function returns NULL.
  *
