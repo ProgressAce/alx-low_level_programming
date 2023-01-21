@@ -24,8 +24,11 @@ int int_index(int *array, int size, int (*cmp)(int))
 		 * compare each element in an array according to
 		 * the function cmp points to
 		 */
-		if (cmp(array[i]))
-			return (i);
+		if (array[i])
+		{
+			if (cmp(array[i]))
+				return (i);
+		}
 
 		i++;
 	}
