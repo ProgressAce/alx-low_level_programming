@@ -10,32 +10,11 @@
  * Return: nothing
  */
 
-void print_numbers(const char *separator, const unsigned int n, ...)
-{
-	    int i;
-	        /* declare pointer to agrument list */
-	        va_list ptr;
-
-		    /* initialise argument list */
-		    va_start(ptr, n);
-
-		        for (i = 0; i < n; i++)
-				    {
-					            /* if it is the last argument of list, don't add separator */
-					            if (separator == NULL || n - 1 == i)
-							                printf("%d", va_arg(ptr, int));
-						            else
-								                printf("%d%s", va_arg(ptr, int), separator);
-							        }
-
-			    printf("\n");
-}
-
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	/* declare pointer to argument list */
 	va_list vapt;
-	int i;
+	unsigned int i;
 	char *str;
 
 	/* initialise argument list */
@@ -52,7 +31,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		else
 			printf("(nil)");
 
-		/* last argument */
+		/* printing separator before the last argument */
 		if (n - 1 > i)
 		{
 			/* printing separator */
