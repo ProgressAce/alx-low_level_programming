@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "3-calc.h"
 
 /**
