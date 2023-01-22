@@ -36,13 +36,13 @@ void print_all(const char * const format, ...)
 					printf("(nil)");
 					break;
 				}
-				printf("%s", va_arg(vapt, char *));
+				printf("%s", str);
 				break;
 		}
 		j = 0;
 		while (types[j])
 		{
-			if (format[i] == types[j] && format[i + 1] != '\n')
+			if (format[i] == types[j] && format[i + 1] != '\0')
 			{
 				printf(", ");
 				break;
