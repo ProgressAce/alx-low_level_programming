@@ -2,6 +2,7 @@
 #define CALC
 
 #include <stdio.h>
+#include <string.h>
 
 int op_add(int, int);
 int op_sub(int, int);
