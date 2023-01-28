@@ -11,28 +11,26 @@
 
 int main(void)
 {
-	int num1 = 1;
-	int num2 = 2;
-	int temp;
-	int counter = 0;
+	unsigned int num1 = 1, num2 = 2, sum;
+	int counter = 1;
 
 	/* print first fibonacci number*/
 	printf("%d, ", num1);
 
 	/* Loop until fibonacci prints 50 times */
-	while (counter < 50)
+	while (counter != 50)
 	{
-		printf("%d, ", num2);
-
-		/* give num1 and num2 their new respective values */
-		temp = num2;
-		num2 = num1 + num2;
-		num1 = temp;
-
+		/* update fibonacci term values */
+		sum = num1 + num2;
+		num1 = num2;
+		num2 = sum;
 		counter++;
-	}
 
-	putchar('\n');
+		if (counter == 50)
+			printf("%u\n", num1);
+		else
+			printf("%u, ", num1);
+	}
 
 	return (0);
 }
