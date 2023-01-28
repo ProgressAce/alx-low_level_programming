@@ -11,11 +11,11 @@
 
 int main(void)
 {
-	unsigned int num1 = 1, num2 = 2, sum;
+	unsigned long int num1 = 1, num2 = 2, sum;
 	int counter = 1;
 
 	/* print first fibonacci number*/
-	printf("%d, ", num1);
+	printf("%lu, ", num1);
 
 	/* Loop until fibonacci prints 50 times */
 	while (counter != 50)
@@ -27,9 +27,9 @@ int main(void)
 		counter++;
 
 		if (counter == 50)
-			printf("%u\n", num1);
+			printf("%lu\n", num1);
 		else
-			printf("%u, ", num1);
+			printf("%lu, ", num1);
 	}
 
 	return (0);
