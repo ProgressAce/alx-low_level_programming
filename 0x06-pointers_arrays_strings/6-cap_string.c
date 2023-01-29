@@ -20,8 +20,8 @@ char *cap_string(char *s)
 		length++;
 
 	/* check for, if length <= 0 */
-	if (length <= 0)
-		return ("");
+	if (length == 0)
+		return (NULL);
 
 	/* loop through s */
 	for (i = 0; s[i] != '\0'; i++)
