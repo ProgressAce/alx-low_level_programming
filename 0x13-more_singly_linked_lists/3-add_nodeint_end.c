@@ -2,7 +2,7 @@
 
 /**
  * add_nodeint_end - adds a new node at the end of a linked listint_t list.
- * @h: the linked list
+ * @head: pointer to the head of the linked list
  * @n: constant integer for node
  *
  * Return: the address of the new_node
@@ -10,8 +10,8 @@
 
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *new, *curr = *head;
-	
+	listint_t *new, *active = NULL;
+
 	new = malloc(sizeof(listint_t));
 
 	if (new == NULL)
@@ -23,19 +23,21 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		new->next = NULL;
 	}
 
-	if (*head != NULL)
+	active = *head;
+	/* make sure linked list is not empty */
+	if (active != NULL)
 	{
-		curr = *head;
-		while (curr->next != NULL)
-			curr = curr->next;
+		/* find last node of the linked list */
+		while (active->next != NULL)
+			active = active->next;
 
-		/* connect nodes */
-		curr->next = new;
+		/* connect active node from NULL to new node */
+		active->next = new;
 
 		return (new);
 	}
 	else
-		/* connect nodes */
+		/* connect head of list to new */
 		*head = new;
 
 	return (NULL);
