@@ -34,11 +34,10 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		/* connect active node from NULL to new node */
 		active->next = new;
 
-		return (new);
 	}
 	else
 		/* connect head of list to new */
 		*head = new;
 
-	return (NULL);
+	return (new);
 }
