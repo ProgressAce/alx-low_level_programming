@@ -2,7 +2,7 @@
 
 /**
  * free_listint2 - frees a listint_t list and sets head to NULL.
- * @h: pointer to the head of the linked list
+ * @head: pointer to the head of the linked list
  *
  * Return: void
  */
@@ -14,11 +14,17 @@ void free_listint2(listint_t **head)
 	if (head == NULL)
 		return;
 
+	/* free every node of the linked list */
 	while (*head != NULL)
 	{
 		temp = *head;
+
+		/* set next node to head */
 		*head = (*head)->next;
+
 		free(temp);
 	}
-	*head = NULL;
+
+	free(*head);
+	head = NULL;
 }

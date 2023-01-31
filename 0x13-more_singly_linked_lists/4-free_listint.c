@@ -2,7 +2,7 @@
 
 /**
  * free_listint - frees a listint_t list.
- * @h: the head of the linked list
+ * @head: the head of the linked list
  *
  * Return: void
  */
@@ -14,8 +14,9 @@ void free_listint(listint_t *head)
 	while (head != NULL)
 	{
 		temp = head;
-		free(temp);
 		head = head->next;
+		free(temp);
 	}
+
 	free(head);
 }
