@@ -2,13 +2,13 @@
 #include <stdio.h>
 
 /**
- * free_list_ptr - frees a list_ptr linked list
+ * free_list_ptr2 - frees a list_ptr linked list
  * @head: pointer to the head of the linked list
  *
  * Return: void
  */
 
-void free_list_ptr(list_ptr **head)
+void free_list_ptr2(list_ptr **head)
 {
 	list_ptr *temp;
 
@@ -36,8 +36,8 @@ void free_list_ptr(list_ptr **head)
 size_t free_listint_safe(listint_t **h)
 {
 	size_t node_count = 0;
-	listint *current;
-	list_ptr *head_pt, curr_pt, new_pt, *temp;
+	listint_t *current, *temp;
+	list_ptr *head_pt, *curr_pt, *new_pt;
 
 	head_pt = NULL;
 	current = *h;
@@ -47,15 +47,16 @@ size_t free_listint_safe(listint_t **h)
 		new_pt = malloc(sizeof(list_ptr));
 
 		if (new_pt == NULL)
-			return (NULL);
+			exit(98);
 
 		new_pt->p = (void *)current;
 		new_pt->next = head_pt;
 		head_pt = new_pt;
-		curr_pt = *h;
+		curr_pt = head_pt;
 
-		while (curr_pt)
+		while (curr_pt->next != NULL)
 		{
+			curr_pt = curr_pt->next;
 			/**
 			 * find pointer that points back to an already
 			 * linked node
@@ -63,19 +64,20 @@ size_t free_listint_safe(listint_t **h)
 			if (curr_pt->p == current)
 			{
 				h = NULL;
-				free_list_ptr(&head_pt);
+				free_list_ptr2(&head_pt);
 				return (node_count);
 			}
 
-			curr_pt = curr_pt->next;
 		}
 
 		node_count++;
+		/* free current node*/
 		temp = current;
 		current = current->next;
 		free(temp);
 	}
 
-	h = NULL;
+	*h = NULL;
+	free_list_ptr2(&head_pt);
 	return (node_count);
 }
