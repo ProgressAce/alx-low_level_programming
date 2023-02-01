@@ -26,11 +26,11 @@ void free_list_ptr2(list_ptr **head)
 
 /**
  * print_listint_safe - prints a listint_t linked list.
- * @head: head of the linked list
+ * @h: pointer to the head of the linked list
  *
  * Extra: if the function fails, exit the program with status 98.
  *
- * Return: the number of nodes in the linked list
+ * Return: the size of the free'd linked list
  */
 
 size_t free_listint_safe(listint_t **h)
@@ -57,10 +57,7 @@ size_t free_listint_safe(listint_t **h)
 		while (curr_pt->next != NULL)
 		{
 			curr_pt = curr_pt->next;
-			/**
-			 * find pointer that points back to an already
-			 * linked node
-			 */
+			/*find pointer that points back to already linked node*/
 			if (curr_pt->p == current)
 			{
 				h = NULL;
@@ -69,14 +66,12 @@ size_t free_listint_safe(listint_t **h)
 			}
 
 		}
-
 		node_count++;
 		/* free current node*/
 		temp = current;
 		current = current->next;
 		free(temp);
 	}
-
 	*h = NULL;
 	free_list_ptr2(&head_pt);
 	return (node_count);
