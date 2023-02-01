@@ -28,10 +28,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	/* find the index before idx position */
 	for (i = 0; i < idx - 1; i++)
 	{
-		if (active_node == NULL && i != idx - 2)
+		if (active_node == NULL || active_node->next == NULL)
 			return (NULL);
 
 		active_node = active_node->next;
+	}
+
+	if (idx == 0)
+	{
+		new_node->next = active_node;
+		*head = new_node;
 	}
 
 	new_node->next = active_node->next;
