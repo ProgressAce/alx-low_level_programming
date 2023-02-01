@@ -16,12 +16,11 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 
 	if (new == NULL)
 		return (NULL);
-	else
-	{
-		/* assign values to new node */
-		new->n = n;
-		new->next = NULL;
-	}
+
+	/* assign values to new node */
+	new->n = n;
+	new->next = NULL;
+
 
 	active = *head;
 	/* make sure linked list is not empty */
