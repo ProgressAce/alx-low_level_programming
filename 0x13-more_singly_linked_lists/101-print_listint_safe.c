@@ -55,22 +55,22 @@ size_t print_listint_safe(const listint_t *head)
 		curr_pt = head_pt;
 
 		/**
-		 * loop through linked list of newly inserted nodes and
-		 * find matching pointer values
+		 * look for possible nodes that point to nodes
+		 * that are already linked
 		 */
-		while (curr_pt)
+		while (curr_pt->next != NULL)
 		{
+			curr_pt = curr_pt->next;
 			if (curr_pt->p == current)
 			{
-				printf("-> [%p] %d", (void *)current,
+				printf("-> [%p] %d\n", (void *)current,
 						current->n);
-				free();
-				retur ()
-			}
-			curr_pt = curr_pt->next;
+				free_list_ptr(&head_pt);
+				return (node_count);
+			}	
 		}
 
-		printf("[%p] %d", (void *)current, current->n);
+		printf("[%p] %d\n", (void *)current, current->n);
 
 		node_count++;
 		current = current->next;
