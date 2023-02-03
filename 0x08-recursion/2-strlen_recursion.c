@@ -7,12 +7,12 @@
  * Return: the pointer s
  */
 
-int _strlen(char *s)
+int _strlen_recursion(char *s)
 {
 	/* empty string - base case */
 	if (*s == '\0')
 		return (0);
 
 	/* return 1 and start string s at incremented position */
-	return 1 + _strlen(s + 1);
+	return 1 + _strlen_recursion(s + 1);
 }
