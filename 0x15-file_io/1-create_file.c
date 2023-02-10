@@ -24,13 +24,13 @@ int create_file(const char *filename, char *text_content)
 
 	/* case for empty file */
 	if (text_content == NULL)
-		return (-1);
+		text_content = "";
 
 	/* write to file */
 	text_len = _strlen(text_content);
 	wbytes = write(fd, text_content, text_len);
 
-	if (wbytes < text_len)
+	if (wbytes < 0)
 		return (-1);
 
 	close(fd);
