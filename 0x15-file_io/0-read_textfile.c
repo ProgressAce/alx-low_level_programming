@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
- * read_textfile - reads a text file and prints it to the POSIX standard output.
- * @n: unsigned long integer
- * @index: the index, starting from 0
+ * read_textfile - reads a text file and prints it
+ * to the POSIX standard output.
+ * @filename: name of the file
+ * @letters: the number of characters to read from file
  *
- * Return: the value of the bit at index "index", or -1 if an error occured
+ * Return: 1 on success, or -1 on failure.
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
