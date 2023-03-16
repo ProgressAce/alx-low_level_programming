@@ -8,8 +8,8 @@
  * @n: integer value of the new node
  *
  * Description: index is where the node should be added
- * in the list starting from 0. 
- * NULL is returned if it was not possible to add new 
+ * in the list starting from 0.
+ * NULL is returned if it was not possible to add new
  * the node at the given index position.
  *
  * Return: address of the new node,
@@ -18,9 +18,9 @@
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *current = *h, *new;
+	dlistint_t *current = *h;
+	dlistint_t *new = NULL;
 	unsigned int i;
-
 
 	if (idx == 0)
 		new = add_dnodeint(h, n);
@@ -29,7 +29,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (current != NULL)
 		while (current->prev != NULL)
 			current = current->prev;
-
 
 	for (i = 0; current != NULL && i <= idx; i++)
 	{
