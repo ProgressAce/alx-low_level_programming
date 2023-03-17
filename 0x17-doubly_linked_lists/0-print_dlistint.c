@@ -11,6 +11,9 @@ size_t print_dlistint(const dlistint_t *h)
 {
 	size_t node_count = 0;
 
+	if (h == NULL)
+		return (node_count);
+
 	/* edge case of h not being the first node of list*/
 	while (h->prev != NULL)
 		h = h->prev;

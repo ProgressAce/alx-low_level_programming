@@ -12,9 +12,11 @@ size_t dlistint_len(const dlistint_t *h)
 {
 	size_t count = 0;
 
-	/* ensure that h is the first node of the list*/
-	while (h->prev != NULL)
-		h = h->prev;
+
+	if (h != NULL)
+		/* ensure that h is the first node of the list*/
+		while (h->prev != NULL)
+			h = h->prev;
 
 	while (h != NULL)
 	{
