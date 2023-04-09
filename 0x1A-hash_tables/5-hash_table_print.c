@@ -12,10 +12,10 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int idx;
-	hash_node_t *node;
+	hash_node_t *node = NULL;
 	short pr_comma = 0;
 
-	if (ht == NULL || ht->array == NULL)
+	if (ht == NULL)
 	{
 		printf("{}");
 		return;
