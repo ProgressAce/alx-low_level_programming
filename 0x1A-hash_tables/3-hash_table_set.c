@@ -1,88 +1,38 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - adds an element to the hash table.
- *
- * @ht: the hash table you want to add or update the key/value to.
- * @key: the key, and it cannot be an empty string.
- * @value: the value associated with the key.
- * value must be duplicated(not pointed to). value can be an empty string.
- *
- * Return: 1 on success, otherwise 0.
- */
+  * hash_table_set - Adds an element to the hash table
+  * @ht: The hash table to add or update the key/value to
+  * @key: The key of a value
+  * @value: The value associated with the key
+  *
+  * Return: 1 if it succeeded, 0 otherwise
+  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index;
-	hash_node_t *node = NULL, *new_node;
+	unsigned long int idx = 0;
+	hash_node_t *elem = NULL, *new_node = NULL;
 
-	if (ht == NULL || ht->array == NULL)
+	if (ht == NULL || key == NULL || (strcmp(key, "") == 0))
 		return (0);
 
-	if (key == NULL || !strcmp(key, ""))
+	idx = key_index((unsigned char *) key, ht->size);
+	elem = ht->array[idx];
+
+	if (elem && strcmp(key, elem->key) == 0)
+	{
+		free(elem->value);
+		elem->value = strdup(value);
+		return (1);
+	}
+
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
 		return (0);
 
-	index = key_index((const unsigned char *) key, ht->size);
-
-	node = ht->array[index];
-
-	/* handle collision occurance */
-	while (node)
-	{
-		if (!strcmp(node->key, key)) /* if key is found,update value */
-			break;
-		node = node->next;
-	}
-
-	if (node == NULL)
-	{
-		/* add new node */
-		new_node = malloc(sizeof(hash_node_t));
-		new_node->key = malloc(strlen(key) * sizeof(char *));
-		new_node->value = malloc(strlen(value) * sizeof(char *));
-
-		new_node->next = NULL;
-		strcpy(new_node->key, key);
-		strcpy(new_node->value, value);
-	}
-	else /* linked list not empty, so update node value */
-	{
-		node->value = realloc(node->value, strlen(value)
-				* sizeof(char *));
-		strcpy(node->value, value);
-	}
-
+	new_node->key = strdup(key);
+	new_node->value = strdup(value);
+	new_node->next = ht->array[idx];
+	ht->array[idx] = new_node;
 	return (1);
-/*	else  handle collision */
-/*		return(handle_collision_add(&node, key, value));*/
-}
-
-
-/**
- * handle_collision_add - handles the collision of two hash values in
- * the hash table to add an element to the table.
- *
- * @node: the found linked list in the hash table to add or update
- * the key/value to.
- * @key: the key, and it cannot be an empty string.
- * @value: the value associated with the key.
- * value must be duplicated(not pointed to). value can be an empty string.
- *
- * Return: 1 on success, otherwise 0.
- */
-int handle_collision_add(hash_node_t **node, const char *key, const char *value)
-{
-	hash_node_t *head = *node;
-
-	while (head != NULL)
-	{
-		if (!strcmp(head->key, key))
-		{
-			head->value = malloc(strlen(value) * sizeof(char *));
-			strcpy(head->value, value);
-			return (1);
-		}
-		head = head->next;
-	}
-
-	return (0);
 }
