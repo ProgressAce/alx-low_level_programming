@@ -3,8 +3,8 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_create - creates a hash table
- * @size - the size of the hash table
+ * hash_table_create - creates a hash table.
+ * @size: size of the hash table.
  *
  * Return: pointer to the hash table,
  * otherwise NULL.
