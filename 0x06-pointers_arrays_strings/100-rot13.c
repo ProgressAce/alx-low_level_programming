@@ -30,36 +30,19 @@ int _isalpha(char c)
 char *rot13(char *s)
 {
 	int i;
-	int j;
-	int found = 0;
-	char alpha13[] = "abcdefghijklmABCDEFGHIJKLM";
 
-	/* loop through s */
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		/* loop through alpha13 */
-		for (j = 0; alpha13[j] != '\0'; j++)
+		if (_isalpha(s[i]))
 		{
-			/*
-			 * check that s element is alpha
-			 * and == first half of alpha (the alphabet)
-			 */
-			if (_isalpha(s[i]) && s[i] == alpha13[j])
-			{
-				s[i] += 13;
-				found = 1;
-			}
+			/* 1st half of aphabet */
+			if ((s[i] >= 65 && s[i] <= 77) ||
+					(s[i] >= 97 && s[i] <= 109))
+				s[i] = s[i] + 13;
+
+			else /* 1st half of aphabet letters*/
+				s[i] = s[i] - 13;
 		}
-
-		/*
-		 * check that s element is alpha
-		 * and not found in 1st half of the alphabet
-		 */
-		if (_isalpha(s[i]) && !(found))
-			s[i] -= 13;
-
-		/* revert found to false for next character */
-		found = 0;
 	}
 
 	return (s);

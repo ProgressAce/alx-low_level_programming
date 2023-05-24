@@ -1,45 +1,28 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * _strncpy - copies the first "n" characters of a string and
- * overwrites it into another string.
- * @dest: pointer to destination for the copied string
- * @src: pointer to the string to be copied
- * @n: the number of characters
+ * _strncpy - copies the first n bytes of a string and overwrites it to
+ * a destination buffer.
  *
- * Return: the pointer(dest) to the resultant/copied string
+ * @dest: destination of the copied string.
+ * @src: the string to copy.
+ * @n: the number of bytes to copy from the string.
+ *
+ * Return: pointer to the destination str
  */
-
 char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
-	int len_src = 0;
 
-	/* get length of strings at src (address value's) */
-	for (i = 0; src[i] != '\0'; i++)
-		len_src++;
+	if (src == NULL || n < 0)
+		return (dest);
 
-	/* check if n is a positive number, else put null byte into dest */
-	if (n > 0)
-	{
-		/*
-		 * loop through dest and overwrite passing index with
-		 * src until src nth element
-		 */
-		for (i = 0; i < n; i++)
-		{
-			if (i >= len_src)
-				/* add "0" for characters after len_src */
-				dest[i] = '0';
-			else
-				dest[i] = src[i];
-		}
+	for (i = 0; src[i] != '\0' && i < n; i++)
+		dest[i] = src[i];
 
-	/* append null character only if len_src(source string) <= n */
-	if (n > len_src)
-		dest[len_src] = '\0';
-	else
-		dest[0] = '\0';
+	for ( ; i < n; i++)
+		dest[i] = '\0';
 
 	return (dest);
 }
