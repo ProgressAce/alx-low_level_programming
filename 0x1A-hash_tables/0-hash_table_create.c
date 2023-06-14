@@ -20,15 +20,15 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (hash_table == NULL)
 		return (NULL);
 
-	hash_table->size = size;
-
 	/* memory for nodes of the hash table's array */
-	hash_table->array = malloc(sizeof(hash_node_t) * size);
+	hash_table->array = malloc(sizeof(hash_node_t *) * size);
 	if (hash_table->array == NULL)
 	{
 		free(hash_table);
 		return (NULL);
 	}
+
+	hash_table->size = size;
 
 	for (i = 0; i < hash_table->size; i++)
 		hash_table->array[i] = NULL;
